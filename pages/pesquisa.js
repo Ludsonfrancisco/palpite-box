@@ -7,7 +7,8 @@ const Pesquisa = () => {
     Nome: '',
     Email: '',
     Whatsapp: '',
-    Nota: 0
+    Nota: 0,
+    Mensagem: ''
   })
   const notas = [0, 1, 2, 3, 4, 5]
   const [sucess, setSuccess] = useState(false)
@@ -48,7 +49,7 @@ const Pesquisa = () => {
         <input className=' p-4 block shadow bg-blue-100 my-2 rounded' type='text' placeholder='Whatsapp' onChange={onChange} name='Whatsapp' value={form.Whatsapp} />
         <label className='font-bold'>Nota:</label>
 
-        <div className='flex py-6 cursor-pointer'> 
+        <div className='flex py-6 cursor-pointer'>  
           {notas.map(nota => {
             return (<label className='block w-1/6 text-left '>
                     {nota} <br />
@@ -57,6 +58,9 @@ const Pesquisa = () => {
 
           })}
         </div>
+
+        <label className='font-bold'>Deixe sua opinião:</label>
+        <textarea className=' p-4 block shadow bg-blue-100  w-72 h-40 my-2 rounded' type='text' placeholder='Deixe sua opinião' onChange={onChange} name='Mensagem' value={form.Mensagem} />
 
         <button className='bg-blue-400 px-12 py-4 rounded-lg font-bold shadow-lg hover:shadow' onClick={save}>Salvar</button>
       </div>}
